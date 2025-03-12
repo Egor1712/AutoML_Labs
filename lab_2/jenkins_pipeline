@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Repository') {
+            steps {
+                git(
+                    url: 'https://github.com/Egor1712/AutoML_Labs.git',
+                    branch: 'main'
+                )
+            }
+        }
+        stage('Setup Python Environment') {
+            steps {
+                dir('lab_2'){
+                    sh 'python -m venv venv'
+                    sh '. venv/bin/activate && pip install -r requirements.txt'
+                }
+            }
+        }
+        stage('Run Python Scripts') {
+            steps {
+                dir('lab_2'){
+                    sh '. venv/bin/activate && python data_preprocessing.py'
+                    sh '. venv/bin/activate && python model_learning.py'
+                    sh '. venv/bin/activate && python model_testing.py'
+                }
+            }
+        }
+    }
+}
