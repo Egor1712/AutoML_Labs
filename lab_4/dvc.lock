@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python prepare.py
+    deps:
+    - path: conf/config.yaml
+      hash: md5
+      md5: 9706b398a486b4d18bfddd042173bf35
+      size: 150
+    - path: prepare.py
+      hash: md5
+      md5: 393e63f28df79e01c33fbe8f77065695
+      size: 984
+    outs:
+    - path: data/titanic_encoded.csv
+      hash: md5
+      md5: f8b85074cb953aec751b12b865aa4cdc
+      size: 13272
+    - path: data/titanic_filled.csv
+      hash: md5
+      md5: 3c38d48847fc0b553ef337bef299ee91
+      size: 13581
+    - path: data/titanic_processed.csv
+      hash: md5
+      md5: f8b85074cb953aec751b12b865aa4cdc
+      size: 13272
+    - path: data/titanic_raw.csv
+      hash: md5
+      md5: bbadc75974dd530969b353f83ca6f29c
+      size: 10572

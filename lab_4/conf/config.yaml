@@ -1,0 +1,5 @@
+output_dir: data
+raw_file: titanic_raw.csv
+filled_file: titanic_filled.csv
+encoded_file: titanic_encoded.csv
+processed_file: titanic_processed.csv

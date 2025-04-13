@@ -1,0 +1,4 @@
+pandas
+catboost
+hydra-core
+dvc[gdrive]
